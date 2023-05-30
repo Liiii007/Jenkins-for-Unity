@@ -1,12 +1,11 @@
 # Jenkins for Unity
 
-## Note!
+这是一个翻译项目，源文章来自：https://github.com/CarlHalstead/Jenkins-for-Unity
+（施工中）
 
-This has been updated! See my new repository [here](https://github.com/CarlHalstead/Jenkins-for-Unity-with-DigitalOcean/)
+## 什么是Jenkins?
 
-## What is Jenkins?
-
-From the Jenkins website:
+一段来自Jenkins官网的话:
 
 ```
 The leading open source automation server, Jenkins provides hundreds of plugins to support building, 
@@ -15,14 +14,12 @@ deploying and automating any project.
 
 What this allows us to do is take a Unity project currently on GitHub (Or BitBucket, GitLab etc) and automatically build the project to the platforms specified. Once the build is complete we can then zip the build and automatically transfer it to a Google Drive folder for upload. This allows you to build all of your target platforms with no user intervention and without the building processing blocking your Unity instance so you can continue working.
 
-## Prerequisites
+## 前置要求
+- Jenkins
+- （可选）Git
+- （可选）Unity Project在Github上
 
-1. [Jenkins](https://jenkins.io) (This should be installed on another machine and you should be able to sign in. This is done through the web browser at LocalIpOfJenkinsMachine:8080. You can find the IP address of the Jenkins machine by using the command 'ipconfig' in Command Prompt on said machine)
-2. [Google Drive](https://www.google.com/drive/) / [Dropbox](https://www.dropbox.com) / Other Cloud Storage (This is used to store your builds. This allows you and others access to the builds from anywhere and allows you to share them with other extremely easily)
-3. [This Git repository](https://github.com/GamingAnonymous/Jenkins-for-Unity) imported into your Unity project. The vital files include:
-    1. The Jenkins folder. This contains the scripts needed to build the application.
-    2. The csc and mcs files. These import the required DLLs to zip your build. They MUST be in your root assets folder otherwise the ZipFile class will not be recognised.
-4. [Git](https://git-scm.com) installed on your Jenkins machine. This will be used to clone your Git repository.
+注意：项目托管在其他平台也可以从Jenkins的自动化构建中受益，不一定需要在Github上。
 
 ## Getting Started (Jenkins Setup)
 
